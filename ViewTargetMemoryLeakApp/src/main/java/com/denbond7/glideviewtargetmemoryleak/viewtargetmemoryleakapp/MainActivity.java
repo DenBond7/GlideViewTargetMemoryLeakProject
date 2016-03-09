@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-  private static final int SPLASH_TIME_OUT = 3000;
+  private static final int SPLASH_TIME_OUT = 1000;
   private static final Handler HANDLER = new Handler();
   private long startTime;
   private boolean isActivityShow;

@@ -1,7 +1,6 @@
 package com.denbond7.glideviewtargetmemoryleak.viewtargetmemoryleakapp;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 public class SecondActivity extends AppCompatActivity {
 
   @Override
-  public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-    super.onCreate(savedInstanceState, persistentState);
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_second);
 
     GalleryFragment galleryFragment = new GalleryFragment();
