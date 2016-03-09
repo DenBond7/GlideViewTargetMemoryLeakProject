@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     package="com.denbond7.glideviewtargetmemoryleak.viewtargetmemoryleakapp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name=".CustomApplication"
@@ -22,7 +23,15 @@
 
         <activity
             android:name=".SecondActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.denbond7.glideviewtargetmemoryleak.viewtargetmemoryleakapp.GlideConfiguration"
+            android:value="GlideModule" />
+        <meta-data
+            android:name="com.bumptech.glide.integration.okhttp.OkHttpGlideModule"
+            android:value="GlideModule"
+            tools:node="remove" />
     </application>
 
 </manifest>
