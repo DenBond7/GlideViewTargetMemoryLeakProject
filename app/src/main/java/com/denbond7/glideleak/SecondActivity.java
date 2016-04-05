@@ -3,9 +3,7 @@ package com.denbond7.glideleak;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-
-import com.denbond7.glideleak.viewtargetmemoryleakapp.R;
+import android.support.v7.app.ActionBarActivity;
 
 /**
  * @author Denis Bondarenko
@@ -13,7 +11,7 @@ import com.denbond7.glideleak.viewtargetmemoryleakapp.R;
  *         Time: 13:55
  *         E-mail: DenBond7@gmail.com
  */
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends ActionBarActivity {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {

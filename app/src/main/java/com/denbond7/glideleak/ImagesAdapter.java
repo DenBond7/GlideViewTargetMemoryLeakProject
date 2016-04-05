@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
-import com.denbond7.glideleak.viewtargetmemoryleakapp.R;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.denbond7.glideleak.debug.LoggingTarget;
 
 import java.util.List;
 
@@ -38,7 +40,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
         .load(images.get(i))
         .error(android.R.drawable.ic_delete)
         .centerCrop()
-        .into(viewHolder.imageViewCar);
+        .into(new LoggingTarget<GlideDrawable>(new GlideDrawableImageViewTarget(viewHolder.imageViewCar)));
   }
 
   @Override

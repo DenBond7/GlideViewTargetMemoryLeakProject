@@ -1,7 +1,6 @@
 package com.denbond7.glideleak;
 
 import android.app.Application;
-import com.squareup.leakcanary.LeakCanary;
 
 /**
  * @author Denis Bondarenko
@@ -11,9 +10,8 @@ import com.squareup.leakcanary.LeakCanary;
  */
 public class CustomApplication extends Application {
 
-  @Override
-  public void onCreate() {
+  @Override  public void onCreate() {
     super.onCreate();
-    LeakCanary.install(this);
+//    LeakCanary.install(this);
   }
 }

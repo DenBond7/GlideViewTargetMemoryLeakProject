@@ -3,11 +3,9 @@ package com.denbond7.glideleak;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBarActivity;
 
-import com.denbond7.glideleak.viewtargetmemoryleakapp.R;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity {
 
   private static final int SPLASH_TIME_OUT = 1000;
   private static final Handler HANDLER = new Handler();

@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.denbond7.glideleak.viewtargetmemoryleakapp.R;
-
 /**
  * @author Denis Bondarenko
  *         Date: 08.03.2016
