@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GlideViewTargetMemoryLeakProject.iml" filepath="$PROJECT_DIR$/GlideViewTargetMemoryLeakProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ViewTargetMemoryLeakApp/ViewTargetMemoryLeakApp.iml" filepath="$PROJECT_DIR$/ViewTargetMemoryLeakApp/ViewTargetMemoryLeakApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GlideViewTargetMemoryLeakProject.iml" filepath="$PROJECT_DIR$/.idea/modules/GlideViewTargetMemoryLeakProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" />
     </modules>
   </component>
 </project>

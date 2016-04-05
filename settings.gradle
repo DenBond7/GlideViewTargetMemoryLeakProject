@@ -1,1 +1,1 @@
-include ':ViewTargetMemoryLeakApp'
+include ':app'
