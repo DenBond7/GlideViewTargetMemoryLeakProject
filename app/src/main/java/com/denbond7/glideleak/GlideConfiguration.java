@@ -25,7 +25,7 @@ public class GlideConfiguration implements GlideModule {
   public void applyOptions(Context context, GlideBuilder builder) {
     builder.setMemoryCache(new MemoryCacheAdapter());
     builder.setBitmapPool(new BitmapPoolAdapter());
-    builder.setDiskCacheService(new DebugGlideExecutor(1, new LoggingPriorityBlockingQueue()));
+    builder.setDiskCacheService(new DebugGlideExecutor(1, new NonBuggyPriorityBlockingQueue()));
   }
 
   @Override

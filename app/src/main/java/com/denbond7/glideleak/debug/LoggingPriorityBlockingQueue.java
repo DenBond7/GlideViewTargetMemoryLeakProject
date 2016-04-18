@@ -1,5 +1,6 @@
 package com.denbond7.glideleak.debug;
 
+import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -8,20 +9,32 @@ import android.util.Log;
 @SuppressWarnings("all")
 public class LoggingPriorityBlockingQueue extends PriorityBlockingQueue<Runnable> {
 	private void log(String method, Object... args) {
-		StringBuilder sb = new StringBuilder().append(this).append('.').append(method);
+		StringBuilder sb = new StringBuilder().append("queue").append('.').append(method);
 		LoggingTarget.appendArgs(sb, args);
-		sb.append(' ').append("size=").append(super.size());
+		sb.append(' ').append("size=").append(super.size()).append(Arrays.toString(getQueue()));
 
-		Log.println(Log.ASSERT, "Queue", sb.toString());
+		Log.println(Log.ASSERT, "Queue", sb.toString().replaceAll("(?-i:[a-z0-9_]+\\.)+", ""));
 	}
-
+	private Object[] getQueue() {
+		Object[] arr = null;
+		try {
+			Field queue = PriorityBlockingQueue.class.getDeclaredField("queue");
+			queue.setAccessible(true);
+			arr = (Object[])queue.get(this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return arr;
+	}
 	@Override public boolean add(Runnable runnable) {
 		log("add", runnable);
 		return super.add(runnable);
 	}
 	@Override public boolean offer(Runnable runnable) {
-		log("offer", runnable);
-		return super.offer(runnable);
+		log("offerBefore", runnable);
+		boolean offer = super.offer(runnable);
+		log("offerAfter", offer);
+		return offer;
 	}
 	@Override public void put(Runnable runnable) {
 		log("put", runnable);
@@ -36,8 +49,10 @@ public class LoggingPriorityBlockingQueue extends PriorityBlockingQueue<Runnable
 		return super.poll();
 	}
 	@Override public Runnable take() throws InterruptedException {
-		log("take");
-		return super.take();
+		log("takeBefore");
+		Runnable take = super.take();
+		log("takeAfter", take);
+		return take;
 	}
 	@Override public Runnable poll(long timeout, TimeUnit unit) throws InterruptedException {
 		log("poll", timeout, unit);
